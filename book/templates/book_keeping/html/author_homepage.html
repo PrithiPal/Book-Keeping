@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link href="../css/author_homepage.css" rel="stylesheet" type="text/css"/>
+        <title>HOMEPAGE</title>
+        
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+            <h1 align="center">Hi, {{ author.first_name }}. How are you today</h1>
+            <h2 align="center">
+                Are you from {{ author.country }} really ??
+            </h2> 
+
+
+            <h3><a href={% url 'author_logout' %}>Logout</a></h3>
+        {% else %}
+            <h1>Not loged in </h1>
+        {% endif %}
+        
+        
+        
+        <form action="{ url 'sampleform' }" method="post">
+            {% csrf_token %}
+            {{dateform.as_p}}
+        <input type="submit" value="Yo"/>
+        </form>
+        
+        
+    </body>
+    
+</html>

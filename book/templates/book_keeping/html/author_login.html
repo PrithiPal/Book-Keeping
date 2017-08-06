@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>AUTHOR-LOGIN</title>
+        <link type="text/css" rel="stylesheet" href="../css/author_login.css"/>
+    </head>
+    <body>
+        
+        <h1 align="center">THIS IS AUTHOR LOGIN PAGE</h1>
+        
+        <form action="{{ home }}" method="post">
+        
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit"/>
+        </form>
+        
+        
+        
+        
+        
+    </body>
+</html>
