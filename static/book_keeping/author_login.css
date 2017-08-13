@@ -1,0 +1,88 @@
+html,body{
+
+}
+
+h1{
+    
+    color : blue;
+    background-color : aqua;
+}
+
+div.form-wrapper{
+    
+    width : 400px;
+}
+form{
+    
+    border-width : 4px;
+    border-color : #E06B94;
+    border-style : solid;
+    
+    background-color : #A52351;
+    color : white;
+    padding : 20px 20px 20px 20px;
+    
+    border-radius : 20px;
+}
+
+
+li{
+    list-style : none;
+}
+
+label{
+    font-size : 1.25rem;
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+input[type=text]  {
+margin-top : 10px;
+padding : 10px 10px 10px 10px;
+background-color : #DE94AF;
+border : 1px solid white;
+width : 300px;
+font-size : 1.10rem;
+content : "username";    
+    
+}
+
+input[type="password"]{
+    
+    
+margin-top : 10px;
+padding : 10px 10px 10px 10px;
+background-color : #DE94AF;
+border : 1px solid white;  
+width : 300px;   
+font-size : 1.10rem;
+  
+    
+}
+
+
+
+input[type=text]:focus{
+    background-color : #DE94AF;
+    border : 1px solid white;
+    color : white;
+    font-size : 1.10rem;
+}
+
+input[type="password"]:focus{
+    background-color : #DE94AF;
+    border : 1px solid white;
+    color : white;
+    font-size : 1.10rem;
+}
+
+input[type=submit]{
+    font-size : 1.25rem;
+    padding : 10px 10px 10px 10px;
+    color : white;
+    border : 1px solid white;
+    background-color : #A52351;
+    border-radius : 50px;
+    font-family: 'Titillium Web', sans-serif;
+
+}

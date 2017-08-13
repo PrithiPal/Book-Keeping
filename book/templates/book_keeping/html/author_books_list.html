@@ -1,0 +1,18 @@
+<html>
+    
+    <head>
+        
+        <title>
+            BOOK'S LIST
+            
+        </title>
+        <body>
+            <h1> YOUR BOOK'S LIST</h1>
+            <ul>
+            {% for b in book %}
+                <li>{{b.title}}</li>
+            {% endfor %}
+            </ul>
+        </body>
+    </head>
+</html>

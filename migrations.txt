@@ -1,0 +1,26 @@
+total 184
+-rw-r--r--  1 prithipalsingh  staff   481 28 Jul 14:20 0004_auto_20170728_2120.py
+-rw-r--r--  1 prithipalsingh  staff   911 28 Jul 14:20 0004_auto_20170728_2120.pyc
+-rw-r--r--  1 prithipalsingh  staff   622 27 Jul 17:19 0001_initial.py
+-rw-r--r--  1 prithipalsingh  staff   970 27 Jul 17:19 0001_initial.pyc
+-rw-r--r--  1 prithipalsingh  staff     0 27 Jul 17:19 __init__.py
+-rw-r--r--  1 prithipalsingh  staff   173 27 Jul 17:19 __init__.pyc
+-rw-r--r--  1 prithipalsingh  staff   463 27 Jul 17:23 0002_author_country.py
+-rw-r--r--  1 prithipalsingh  staff   887 27 Jul 17:24 0002_author_country.pyc
+-rw-r--r--  1 prithipalsingh  staff   493 28 Jul 17:49 0005_auto_20170729_0049.py
+-rw-r--r--  1 prithipalsingh  staff   937 28 Jul 17:49 0005_auto_20170729_0049.pyc
+-rw-r--r--  1 prithipalsingh  staff   836 28 Jul 19:34 0006_auto_20170729_0234.py
+-rw-r--r--  1 prithipalsingh  staff  1297 28 Jul 19:34 0006_auto_20170729_0234.pyc
+-rw-r--r--  1 prithipalsingh  staff   657 27 Jul 20:02 0003_book.py
+-rw-r--r--  1 prithipalsingh  staff  1075 27 Jul 20:02 0003_book.pyc
+-rw-r--r--  1 prithipalsingh  staff   718  3 Aug 14:53 0007_auto_20170803_2153.py
+-rw-r--r--  1 prithipalsingh  staff  1056  3 Aug 14:53 0007_auto_20170803_2153.pyc
+-rw-r--r--  1 prithipalsingh  staff   941  7 Aug 14:58 0010_auto_20170807_2158.py
+-rw-r--r--  1 prithipalsingh  staff  1410  7 Aug 14:59 0010_auto_20170807_2158.pyc
+-rw-r--r--  1 prithipalsingh  staff   398  7 Aug 15:02 0011_remove_book_language.py
+-rw-r--r--  1 prithipalsingh  staff   803  7 Aug 15:02 0011_remove_book_language.pyc
+-rw-r--r--  1 prithipalsingh  staff     0  7 Aug 15:13 migrations.txt
+-rw-r--r--  1 prithipalsingh  staff   683  5 Aug 18:43 0008_country.py
+-rw-r--r--  1 prithipalsingh  staff  1088  5 Aug 18:43 0008_country.pyc
+-rw-r--r--  1 prithipalsingh  staff   494  5 Aug 20:35 0009_auto_20170806_0335.py
+-rw-r--r--  1 prithipalsingh  staff   819  5 Aug 20:35 0009_auto_20170806_0335.pyc

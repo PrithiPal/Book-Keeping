@@ -1,11 +1,24 @@
-<html>
+{% load static %}
+   <html>
     <head>
         <title>INDEX PAGE</title>
+        <link href="{% static 'book_keeping/index.css' %}" type="text/css" rel="stylesheet">
     </head>
+    
     <body>
+        {% if user.is_authenticated %}
+        {% endif %}
         <h1 align="center"> This is the main page</h1>
+        <p>
         <a href={% url "author_signup" %}>SignUp(Author)</a>
         <a href={% url "author_login" %}>Login(Author)</a>
+        </p>
+        
+        <p>
+        <a href="/books-all">All Books</a>
+        <a href={% url "author_login" %}>All Authors</a>
+        </p>
+        
     </body>
     
 </html>

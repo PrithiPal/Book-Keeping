@@ -4,7 +4,7 @@
         <link type="text/css" rel="stylesheet" href="../css/author_signup.css"/>
     </head>
     <body>
-        
+
         <form action="{{ author_signup }}" method="post">
             {% csrf_token %}
             {{ form.as_p }}

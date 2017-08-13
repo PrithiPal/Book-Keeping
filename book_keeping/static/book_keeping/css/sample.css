@@ -1,0 +1,39 @@
+*{
+    
+    box-sizing : border-box;
+}
+.parent{
+    
+    background-color : beige;    
+    position : relative;
+    height : 300px;
+    width : 300px;
+    box-sizing : border-box;
+    background-size : cover;
+    filter : blur(10px);
+    
+    
+    
+}
+.parent::before{
+    top : 0;
+    left : 0;
+    height : 100%;
+    width : 100%;
+    position : absolute;
+    content : '';
+    background : url('../images/Bookshelf.jpg');
+    filter : blur(10px);
+    z-index : -1;
+}
+.child{
+    height : 100px;
+    width : 100px;
+    margin : auto;
+    background-color : antiquewhite;
+    opacity : 1.0;
+    
+    overflow : hide
+}
+
+

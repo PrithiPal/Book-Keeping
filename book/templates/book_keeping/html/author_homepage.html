@@ -1,11 +1,22 @@
-<html>
+{% load static %}
+   <html>
     <head>
-        <link href="../css/author_homepage.css" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'book_keeping' %}" rel="stylesheet" type="text/css"/>
         <title>HOMEPAGE</title>
         
     </head>
     <body>
         {% if user.is_authenticated %}
+            <div class="message">
+            {% if messages %}
+                <ul>
+                {% for m in messages %}
+                    <li>TAG : {{m.tags}} </li>
+                    <li>MESSAGE : {{m}} </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
             <h1 align="center">Hi, {{ author.first_name }}. How are you today</h1>
             <h2 align="center">
                 Are you from {{ author.country }} really ??
@@ -16,14 +27,11 @@
         {% else %}
             <h1>Not loged in </h1>
         {% endif %}
+    
         
         
-        
-        <form action="{ url 'sampleform' }" method="post">
-            {% csrf_token %}
-            {{dateform.as_p}}
-        <input type="submit" value="Yo"/>
-        </form>
+        <p><a href="{% url 'add_book' %}"> Add a book </a></p>
+        <p><a href="{% url 'books' %}"> View your books </a></p>
         
         
     </body>

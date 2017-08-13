@@ -13,31 +13,41 @@ class Author(models.Model) :
     first_name = models.CharField(max_length=100,null=False)
     last_name = models.CharField(max_length=100,null=False)
     country = models.CharField(max_length=100,default="Canada")
-    username = models.CharField(max_length=100,null=False,unique=True)
-    password = models.CharField(max_length=100,null=False)
+
 
     def __str__(self) :
         writer_full_name = str(self.first_name) + " " + str(self.last_name)
         return writer_full_name
 
-    def clean_last_name(self) :
-        print("CLEAN LAST NAME STARTS..")
-        f_name = self.first_name
-        l_name = self.last_name
+    def all(self) :
+        return (self.author_auth,str(self.first_name),str(self.last_name),str(self.country))
 
-        all_auth_names = [(str(x.first_name),str(x.last_name)) for x in self.objects.all()]
-        if (f_name,l_name) in all_auth_names : # Entry with same first and last names already exists
-            raise ValidationError(_("These two names already exists"))
-        else :
-            return l_name
-            print("LAST NAME IS ",str(l_name))
+
+class Language(models.Model) :
+    name = models.CharField(max_length=49,null=True)
+    lang_code = models.CharField(max_length=2,null=True)
+
+    def __str__(self) :
+        return self.name
+
+class Genre(models.Model) :
+    GENRE_TYPE_CHOICES = (
+    ('Fiction',"Fictional Work"),
+    ('Non-Fiction',"Non-Fictional Work"),
+    )
+    name = models.CharField(max_length=10,null=True)
+    genre_type = models.CharField(choices=GENRE_TYPE_CHOICES,null=True,max_length=20)
+
+    def __str__(self) :
+        return self.name
 
 
 class Book(models.Model) :
 
     title = models.CharField(max_length=100,null=False)
     author = models.ManyToManyField(Author,related_name='books')
-
+    language = models.ForeignKey(Language,on_delete=models.SET_DEFAULT,default=1 )# default is English langauge
+    genre = models.ForeignKey(Genre,on_delete=models.SET_DEFAULT,default=1)
 
     def __str__(self) :
         return self.title

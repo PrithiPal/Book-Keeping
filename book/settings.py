@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+print("-----BASE DIR : ",BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,6 +27,9 @@ SECRET_KEY = 'xig8vlcjj(iviu4t2%j&)#s59@axf4kjb_qrsh45rg9*m+xok@'
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1']
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'book_keeping/static')
+## root is set to locate the static files
 
 
 # Application definition
@@ -49,7 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
+
 ]
 
 ROOT_URLCONF = 'book.urls'

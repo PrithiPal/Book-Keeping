@@ -8,4 +8,6 @@ from .models import Author
 class MyAdmin(admin.ModelAdmin) :
     pass
 
+
+
 # Register your models here.

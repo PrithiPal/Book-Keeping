@@ -1,0 +1,141 @@
+html,body{
+    
+    font-size : 16px;
+    font-family: 'Crete Round', serif;
+    background-color : #E2DCDF;
+}
+
+header{
+    background-color: white;
+    
+}
+
+div.header-option{
+    display : inline-block;
+    color : black;
+    
+    padding : 10px 10px 10px 10px;
+    margin-right : 5px;
+}
+
+div.header-option:hover{
+    background-color : gray;
+}
+
+div.body-wrapper{
+    
+    padding-left : 10vw;
+    box-sizing: border-box;
+    padding-right : 0vw;
+    background-color : black;
+}
+div.left-design{
+    background-color : #4f0222;
+    width : 100px;
+    height : 100%;
+    float : left;
+}
+div.right-design{
+    background-color : #4f0222;
+    width : 100px;
+    height : 100%;
+    float : left;
+}
+
+div.form-wrapper{
+    
+   float : left;
+   height : 100%;
+   background-color : black;
+   width : 60vw;
+   background : #efdee5;
+   padding-top : 70px;
+   background: url('../images/Bookshelf.jpg');
+   background-repeat : no-repeat;
+   background-size: cover;
+   
+}
+
+
+h1 {  
+    
+}
+form {
+    z-index : 2;
+    background : rgba(0,0,0,0.7);
+    width : 60%;
+    margin-left : 20%;
+    border-left : 10px solid #9D3E74;
+    border-right : 10px solid #9D3E74;
+    box-shadow : 5px 5px 10px gray;
+    filter : grayscale(0%);
+    box-sizing : border-box;
+    padding : 10px 50px 20px 10px;
+    
+    
+}
+
+li{
+    display : block;
+    list-style-type : none;
+    margin-bottom : 10px;
+}
+
+label{
+    font-size : 1.2rem;
+    color : white;
+}
+
+input {
+   
+    width : 100%;
+    border : 2px solid white;
+    border-radius : 5px;
+    margin-left : 0px;
+    color : #9D3E74;
+    outline : none;
+}
+input[type="text"]{
+    
+    
+    font-family: 'Roboto', sans-serif;
+    font-size : 1rem;
+    padding : 10px 10px 10px 10px;
+    margin-bottom : 20px;
+
+}
+
+input[type="password"]{
+    
+    font-family: 'Roboto', sans-serif;
+    font-size : 1rem;
+    padding : 10px 10px 10px 10px;  
+    margin-bottom : 20px;
+    
+}
+
+input[type="submit"]{
+    
+    background : rgba(0,0,0,0);
+    border : 2px solid white;
+    border-radius : 10px;
+    padding : 10px 30px 10px 30px;
+    width : auto;
+    margin-left : 40px;
+    font-size : 1.5rem;
+    color : white;
+    
+    
+}
+input::placeholder{
+    color : gray;
+}
+
+
+input[type=submit]:focus{
+    background : rgba(0,0,0,0.5);
+
+}
+
+
+
