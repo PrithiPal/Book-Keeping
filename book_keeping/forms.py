@@ -1,6 +1,6 @@
 
 from django import forms
-from book_keeping.models import Author,Country,Book,Language
+from book_keeping.models import Author,Country,Book,Language,Genre
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
@@ -51,7 +51,8 @@ class AuthorAddForm(forms.Form) :
 class AuthorAddBookModelForm(forms.ModelForm) :
 
     language = forms.ModelChoiceField(queryset=Language.objects.all())
+    genre = forms.ModelChoiceField(queryset=Genre.objects.all())
 
     class Meta :
         model = Book
-        fields = ['title','language',]
+        fields = ['title','language','genre']

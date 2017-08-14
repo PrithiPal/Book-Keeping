@@ -1,7 +1,7 @@
 {% load static %}
    <html>
     <head>
-        <title>AUTHOR-LOGIN</title>
+        <title>{% block page_title %}{% endblock %}</title>
         <link href="https://fonts.googleapis.com/css?family=Crete+Round|Roboto" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="{% static 'book_keeping/css/author_login.css' %}" />
 
@@ -9,6 +9,8 @@
     <body>
         <header>
             <div class="header-option">Home</div>
+            {%block header-option%}{% endblock %}
+            <!-- Should be div.header-option type-->
             <div class="header-option">All Books</div>
         </header>
         <div class="body-wrapper">

@@ -7,6 +7,11 @@ from django.core.exceptions import ValidationError
 
 
 
+
+
+
+
+
 class Author(models.Model) :
 
     author_auth = models.OneToOneField(User,primary_key=True)
@@ -14,6 +19,17 @@ class Author(models.Model) :
     last_name = models.CharField(max_length=100,null=False)
     country = models.CharField(max_length=100,default="Canada")
 
+
+    @classmethod
+    def my_books(self) :
+        genre_list = []
+        all_books = self.books.all()
+        return all_books
+
+    # Managers
+
+
+    objects = models.Manager()
 
     def __str__(self) :
         writer_full_name = str(self.first_name) + " " + str(self.last_name)
@@ -23,12 +39,16 @@ class Author(models.Model) :
         return (self.author_auth,str(self.first_name),str(self.last_name),str(self.country))
 
 
+
+
 class Language(models.Model) :
     name = models.CharField(max_length=49,null=True)
     lang_code = models.CharField(max_length=2,null=True)
 
     def __str__(self) :
         return self.name
+
+
 
 class Genre(models.Model) :
     GENRE_TYPE_CHOICES = (
@@ -46,8 +66,13 @@ class Book(models.Model) :
 
     title = models.CharField(max_length=100,null=False)
     author = models.ManyToManyField(Author,related_name='books')
-    language = models.ForeignKey(Language,on_delete=models.SET_DEFAULT,default=1 )# default is English langauge
-    genre = models.ForeignKey(Genre,on_delete=models.SET_DEFAULT,default=1)
+    language = models.ForeignKey(Language,on_delete=models.SET_DEFAULT,default=1,related_name="books" )# default is English langauge
+    genre = models.ForeignKey(Genre,on_delete=models.SET_DEFAULT,default=1,related_name="books")
+
+    # Managers definitions
+
+
+
 
     def __str__(self) :
         return self.title

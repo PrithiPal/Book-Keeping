@@ -16,4 +16,5 @@ url(r'author-logout',views.author_logout,name="author_logout"),
 url(r'^add-book$',views.AuthorAddBookView.as_view(),name="add_book"),
 url(r'^books-(?P<person>all|my)$',views.BookListView.as_view(),name="books"),
 url(r'^sample$',views.SampleView.as_view(),name="sample"),
+url(r'^genres$',views.AuthorViewGenreView.as_view(),name="author_genres"),
 ]

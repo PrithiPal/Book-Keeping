@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from book_keeping.forms import AuthorLoginForm,AuthorAddForm,AuthorAddBookModelForm
-from book_keeping.models import Author,Book
+from book_keeping.models import Author,Book,Genre
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -102,10 +102,9 @@ class AuthorAddBookView(CreateView) :
     def form_valid(self,form) :
 
         title = form.cleaned_data['title']
-        author = form.cleaned_data['author']
+        author = Author.objects.get(author_auth__exact=self.request.user)
         language = form.cleaned_data['language']
-
-
+        genre = form.cleaned_data['genre']
         # saving
         NewBook = Book(title=title,language=language)
         NewBook.save()
@@ -125,7 +124,7 @@ class BookListView(ListView) :
 
     def get_queryset(self) :
 
-        person = self.kwargs['person']
+        person = self.kwargs['person'] ## accepting arguments from url
         if str(person) == "all" :
             return Book.objects.all()
         elif str(person) == "my" :
@@ -147,3 +146,14 @@ def author_logout(request) :
 class SampleView(View) :
     def get(self,request) :
         return render(request,"book_keeping/html/sample.html",{})
+
+class AuthorViewGenreView(ListView) :
+    model = Genre
+    context_object_name = "genre"
+    template_name = "book_keeping/html/genre_list.html"
+
+    def get_queryset(self) :
+        current_author = Author.objects.get(author_auth__exact=self.request.user)
+        QS = Genre.objects.none()
+        genre_names = [x.genre.name for x in current_author.books.all()]
+        return Genre.objects.filter(name__in=genre_names) ## took immense amount of time..
